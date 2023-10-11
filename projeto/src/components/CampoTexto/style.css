@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    color: white;
+    font-size: 20px;
+}
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+}
