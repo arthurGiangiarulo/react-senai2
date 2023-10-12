@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    color: white;
+    font-size: 20px;
+}
+select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+}
+option{
+    color: black;
+    font-size: 16px;
+}

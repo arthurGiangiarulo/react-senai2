@@ -17,3 +17,8 @@ form{
     margin-top: 50px;
     color: white;
 }
+.cx_botoes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}

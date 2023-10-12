@@ -6,7 +6,8 @@ export default function CampoTexto(props) {
             <label>{props.label}</label>
             <input 
                 type={props.type} 
-                placeholder={props.placeholder} 
+                placeholder={props.placeholder}
+                required={props.required} 
             />
         </div>
     );
