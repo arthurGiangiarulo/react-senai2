@@ -9,7 +9,7 @@ export default function CaixaDeSelecao(props) {
 
     function onChange (event) {
         props.onChange(event.target.value);
-        console.log(event.target.value);
+        console.log(`Opção selecionada: ${event.target.value}`);
     }
 
     return(
