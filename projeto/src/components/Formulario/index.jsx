@@ -27,7 +27,7 @@ export default function Formulario() {
     //Ao utilizar o preventDefault(), a página não é recarregada
     function onSubmit (event) {
         event.preventDefault();
-        console.log(`Nome: ${nome}, e-mail: ${email}, unidade: ${unidade}`);
+        console.log('Formulário enviado com sucesso!');
     }
 
     return(
