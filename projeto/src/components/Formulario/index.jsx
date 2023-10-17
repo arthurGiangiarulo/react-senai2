@@ -25,22 +25,10 @@ export default function Formulario() {
             <h1>Formulário</h1>
 
             <form onSubmit={submit}>
-                <CampoTexto 
-                    label='Nome' 
-                    type='text' 
-                    placeholder='Digite seu nome...' 
-                    required={true}
-                />
-                <CampoTexto 
-                    label='e-mail' 
-                    type='text' 
-                    placeholder='Digite seu email...'
-                />
-                <CaixaDeSelecao label='Unidade' options={unidades} />
-                
+                <CampoTexto label='Nome' type='text' placeholder='Digite seu nome...' required={true}  />
+           
                 <div className='cx_botoes'>
                     <Botao cor='verde'>Enviar</Botao>
-                    <Botao cor='cinza'>Cancelar</Botao>
                 </div>
             </form>
         </section>

@@ -7,13 +7,12 @@ export default function CaixaDeSelecao(props) {
             <label>{props.label}</label>
             <select>
                 {props.options.map((item) => {
-
                     return(
                         <option>{item}</option>
                     );
-
                 })}
             </select>
         </div>
     );
 }
+

@@ -9,3 +9,4 @@ export default function Botao(props) {
         <button className={props.cor} >{props.children}</button>
     );
 }
+
