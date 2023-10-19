@@ -2,8 +2,9 @@ import './style.css';
 
 export default function CampoTexto(props) {
 
-    function aoDigitar (event) {
-        console.log(event.target.value);
+    function digitando (event) {
+        let valor = event.target.value;
+        props.onChange(valor);
     }
 
     return(
@@ -13,7 +14,7 @@ export default function CampoTexto(props) {
                 type={props.type} 
                 placeholder={props.placeholder}
                 required={props.required} 
-                onChange={aoDigitar}
+                onChange={digitando}
             />
         </div>
     );

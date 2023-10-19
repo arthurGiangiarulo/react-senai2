@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import Botao from '../Botao';
-import CaixaDeSelecao from '../CaixaDeSelecao';
 import CampoTexto from '../CampoTexto';
 import './style.css'
 
@@ -12,23 +12,34 @@ export default function Formulario() {
         'Unidade Cascatinha',
         'Unidade Itaipava'
     ];
-
-    unidades[3] = 'Unidade Cascatinha - Nova';	
     
-    function submit (event) {
-        event.preventDefault();
-        console.log('Formulário enviado!');
+    
+    let valor = '';
+    const [titulo, setTitulo] = useState('Formulário');
+  
+    function aoDigitar (valorDoFilho) {
+        valor = valorDoFilho;
+    }
+    function clicando () {
+        console.log(valor);
+        setTitulo(valor);
+        console.log(titulo);
     }
 
     return(
         <section>
-            <h1>Formulário</h1>
+            <h1>{`Bom dia, ${titulo}`}</h1>
 
-            <form onSubmit={submit}>
-                <CampoTexto label='Nome' type='text' placeholder='Digite seu nome...' required={true}  />
+            <form>
+                <CampoTexto 
+                    label='Nome' 
+                    type='text' 
+                    placeholder='Digite seu nome...' 
+                    onChange={aoDigitar}
+                />
            
                 <div className='cx_botoes'>
-                    <Botao cor='verde'>Enviar</Botao>
+                    <Botao cor='verde' aoClicar={clicando}>Enviar</Botao>
                 </div>
             </form>
         </section>
