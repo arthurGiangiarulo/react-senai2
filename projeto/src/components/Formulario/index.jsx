@@ -30,7 +30,7 @@ export default function Formulario(props) {
 
         //Pegar os dados do Formulário
         //Inserir os dados na lista, mantendo os dados já existentes
-        props.setAlunos({nome, url, unidade});
+        props.setAlunos([...props.alunos, {nome, url, unidade}]);
 
         console.log('Formulário enviado com sucesso!');
     }
