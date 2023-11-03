@@ -4,29 +4,20 @@ import CaixaDeSelecao from '../CaixaDeSelecao';
 import './style.css';
 
 export default function Lista(props) {
-    const [unidade, setUnidade] = useState('');
-    const [alunos, setAlunos] = useState([
-        { "nome": "Arthur", "url": "https://github.com/arthurGiangiarulo.png", "unidade": "Unidade Quitandinha" }
-    ]);
-    let unidades = [
-        'Unidade Centro',
-        'Unidade Quitandinha',
-        'Unidade Bingen',
-        'Unidade Itamarati',
-        'Unidade Itaipava'
-    ];
+    const [unidade, setUnidade] = useState([props.unidades[0]]);
 
     return (
         <div className='lista'>
             <CaixaDeSelecao 
                         label='Unidade' 
-                        options={unidades} 
+                        options={props.unidades} 
+                        value={unidade}
                         onChange={value => setUnidade(value)}
             />
             <ol>
-                {alunos.map((aluno, index) => {
+                {props.alunos.map((aluno, index) => {
                     return (
-                        (aluno.unidade === 'Unidade Quitandinha') ?
+                        (aluno.unidade === unidade) ?
                         <div>
                             <ItemDaLista aluno={aluno} index={index} />
                         </div>

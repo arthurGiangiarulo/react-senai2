@@ -4,20 +4,11 @@ import CaixaDeSelecao from '../CaixaDeSelecao';
 import CampoTexto from '../CampoTexto';
 import './style.css'
 
-export default function Formulario() {
+export default function Formulario(props) {
     const [nome, setNome] = useState('');
     const [url, setUrl] = useState('');
-    const [unidade, setUnidade] = useState('');
+    const [unidade, setUnidade] = useState(props.unidades[0]);
     const [alunos, setAlunos] = useState([]);
-    
-    //Bloco lógico
-    let unidades = [
-        'Unidade Centro',
-        'Unidade Quitandinha',
-        'Unidade Bingen',
-        'Unidade Itamarati',
-        'Unidade Itaipava'
-    ];
     
     //Comentários
     //A função recebe o evento Javascript como parâmetro
@@ -28,14 +19,21 @@ export default function Formulario() {
     //Ao utilizar o preventDefault(), a página não é recarregada
     function onSubmit (event) {
         event.preventDefault();
-        console.log('Formulário enviado com sucesso!');
+        props.setAlunos([...props.alunos, {nome, url, unidade}]);
+        console.log('Aluno cadastrado com sucesso!');
+        limpaCampos();
+    }
+    function limpaCampos () {
+        setNome('');
+        setUrl('');
+        setUnidade('');
     }
 
     return(
         <section>
             <h1>Formulário</h1>
 
-            <form onSubmit={onSubmit}>
+            <form onSubmit={(event) => onSubmit(event)}>
                 <CampoTexto 
                     label='Nome' 
                     type='text' 
@@ -45,7 +43,7 @@ export default function Formulario() {
                     required={true}
                 />
                 <CampoTexto 
-                    label='e-mail' 
+                    label='Foto' 
                     type='text' 
                     placeholder='Digite a url...'
                     value={url}
@@ -53,13 +51,14 @@ export default function Formulario() {
                 />
                 <CaixaDeSelecao 
                     label='Unidade' 
-                    options={unidades} 
+                    options={props.unidades} 
+                    value={unidade}
                     onChange={value => setUnidade(value)}
                 />
                 
                 <div className='cx_botoes'>
                     <Botao cor='verde'>Enviar</Botao>
-                    <Botao cor='cinza'>Cancelar</Botao>
+                    <Botao cor='cinza' onClick={limpaCampos}>Cancelar</Botao>
                 </div>
             </form>
         </section>
