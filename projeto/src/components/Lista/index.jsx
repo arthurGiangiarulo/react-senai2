@@ -17,7 +17,7 @@ export default function Lista(props) {
             <ol>
                 {props.alunos.map((aluno, index) => {
                     return (
-                        (aluno.unidade === unidade) ?
+                        (aluno.unidade === unidade || unidade === 'Todas as Unidades') ?
                         <div>
                             <ItemDaLista aluno={aluno} index={index} />
                         </div>
