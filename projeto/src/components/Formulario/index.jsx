@@ -31,8 +31,13 @@ export default function Formulario(props) {
         //Pegar os dados do Formulário
         //Inserir os dados na lista, mantendo os dados já existentes
         props.setAlunos([...props.alunos, {nome, url, unidade}]);
-
-        console.log('Formulário enviado com sucesso!');
+        limpaCampos();
+        console.log('Aluno cadastrado com sucesso!');
+    }
+    function limpaCampos(){
+        setNome('');
+        setUrl('');
+        setUnidade('Unidade Centro')
     }
 
     return(
@@ -63,7 +68,7 @@ export default function Formulario(props) {
                 
                 <div className='cx_botoes'>
                     <Botao cor='verde'>Enviar</Botao>
-                    <Botao cor='cinza'>Limpar</Botao>
+                    <Botao cor='cinza' onClick={limpaCampos}>Limpar</Botao>
                 </div>
             </form>
         </section>

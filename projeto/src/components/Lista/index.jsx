@@ -24,6 +24,7 @@ export default function Lista(props) {
             <ol>
                 {props.alunos.map((aluno, index) => {
                     return (
+                        props.alunos.unidade == unidade &&
                             <ItemDaLista aluno={aluno} index={index} />
                     )
                 })}
