@@ -4,11 +4,10 @@ import CaixaDeSelecao from '../CaixaDeSelecao';
 import CampoTexto from '../CampoTexto';
 import './style.css'
 
-export default function Formulario() {
+export default function Formulario(props) {
     const [nome, setNome] = useState('');
     const [url, setUrl] = useState('');
     const [unidade, setUnidade] = useState('');
-    const [alunos, setAlunos] = useState([]);
     
     //Bloco lógico
     let unidades = [
@@ -28,6 +27,11 @@ export default function Formulario() {
     //Ao utilizar o preventDefault(), a página não é recarregada
     function onSubmit (event) {
         event.preventDefault();
+
+        //Pegar os dados do Formulário
+        //Inserir os dados na lista, mantendo os dados já existentes
+        props.setAlunos({nome, url, unidade});
+
         console.log('Formulário enviado com sucesso!');
     }
 
@@ -35,7 +39,7 @@ export default function Formulario() {
         <section>
             <h1>Formulário</h1>
 
-            <form onSubmit={onSubmit}>
+            <form onSubmit={event => onSubmit(event)}>
                 <CampoTexto 
                     label='Nome' 
                     type='text' 
@@ -59,7 +63,7 @@ export default function Formulario() {
                 
                 <div className='cx_botoes'>
                     <Botao cor='verde'>Enviar</Botao>
-                    <Botao cor='cinza'>Cancelar</Botao>
+                    <Botao cor='cinza'>Limpar</Botao>
                 </div>
             </form>
         </section>
