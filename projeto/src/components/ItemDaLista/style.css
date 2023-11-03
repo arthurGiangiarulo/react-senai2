@@ -1,0 +1,28 @@
+.aluno{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    height: 50px;
+    margin: 5px auto;
+    align-items: center;
+    padding: 10px 40px;
+    border-radius: .4rem;
+    cursor: pointer;
+    color: white;
+}
+.aluno_nome{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.aluno_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.aluno_unidade{
+    font-size: 1.2em;
+    font-weight: bold;
+}

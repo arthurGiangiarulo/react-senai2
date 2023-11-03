@@ -5,9 +5,10 @@ import CampoTexto from '../CampoTexto';
 import './style.css'
 
 export default function Formulario() {
-    const [nome, setNome] = useState('Arthur');
-    const [email, setEmail] = useState('');
+    const [nome, setNome] = useState('');
+    const [url, setUrl] = useState('');
     const [unidade, setUnidade] = useState('');
+    const [alunos, setAlunos] = useState([]);
     
     //Bloco lógico
     let unidades = [
@@ -46,9 +47,9 @@ export default function Formulario() {
                 <CampoTexto 
                     label='e-mail' 
                     type='text' 
-                    placeholder='Digite seu email...'
-                    value={email}
-                    onChange={value => setEmail(value)}
+                    placeholder='Digite a url...'
+                    value={url}
+                    onChange={value => setUrl(value)}
                 />
                 <CaixaDeSelecao 
                     label='Unidade' 

@@ -5,8 +5,8 @@ section{
     width: 500px;
     background-color: black;
     align-items: center;
-    margin: auto;
     margin-top: 100px;
+    border-radius: .4rem;
 }
 h1{
     margin-top: 50px;
