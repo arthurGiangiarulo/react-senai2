@@ -45,7 +45,7 @@ export default function Formulario() {
                     required={true}
                 />
                 <CampoTexto 
-                    label='e-mail' 
+                    label='URL' 
                     type='text' 
                     placeholder='Digite a url...'
                     value={url}

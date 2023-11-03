@@ -10,6 +10,7 @@
     border-radius: .4rem;
     cursor: pointer;
     color: white;
+    margin-bottom: 5px;
 }
 .aluno_nome{
     font-size: 1.2em;

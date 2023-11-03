@@ -5,9 +5,7 @@ import './style.css';
 
 export default function Lista(props) {
     const [unidade, setUnidade] = useState('');
-    const [alunos, setAlunos] = useState([
-        { "nome": "Arthur", "url": "https://github.com/arthurGiangiarulo.png", "unidade": "Unidade Quitandinha" }
-    ]);
+    
     let unidades = [
         'Unidade Centro',
         'Unidade Quitandinha',
@@ -24,13 +22,9 @@ export default function Lista(props) {
                         onChange={value => setUnidade(value)}
             />
             <ol>
-                {alunos.map((aluno, index) => {
+                {props.alunos.map((aluno, index) => {
                     return (
-                        (aluno.unidade === 'Unidade Quitandinha') ?
-                        <div>
                             <ItemDaLista aluno={aluno} index={index} />
-                        </div>
-                        : null
                     )
                 })}
             </ol>
